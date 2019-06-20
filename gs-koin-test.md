@@ -55,7 +55,7 @@ val helloModule = module {
 To make our first test, let's write a simple Junit test file and extend it with `KoinTest`. We will be able then, to use `by inject()` operators.
 
 {% highlight kotlin %}
-class HelloAppTest : KoinTest() {
+class HelloAppTest : KoinTest {
 
     val model by inject<HelloMessageData>()
     val service by inject<HelloService>()
@@ -69,7 +69,7 @@ class HelloAppTest : KoinTest() {
 
     @After
     fun after() {
-        closeKoin()
+        stopKoin()
     }
 
     @Test
